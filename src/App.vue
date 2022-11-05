@@ -20,7 +20,31 @@ body {
 	background-color: $background-color;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+input[data-autocompleted] {
+    background-color: transparent !important;
+}
+
 li {
 	list-style: none;
+}
+
+button {
+	border: none;
+	cursor: pointer;
+	font-family: $font;
+	transition: opacity 0.2s ease-in-out;
+
+	&:hover {
+		opacity: 0.8;
+	}
+
+	&:disabled {
+		pointer-events: none;
+		opacity: 0.4;
+	}
 }
 </style>
