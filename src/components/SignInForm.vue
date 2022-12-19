@@ -1,14 +1,12 @@
 <script lang="ts" setup>
 import { reactive, ref, watch } from "vue";
 
-import SubmitButton from "./Buttons/SubmitButton.vue";
-import TextInput from "./Inputs/TextInput.vue";
-
-import type { ModelValue } from "./Inputs/TextInput.vue";
+import Form from "./BaseForm/Form.vue";
+import Field from "./Field.vue";
 
 interface SignInFields {
-	email: ModelValue;
-	password: ModelValue;
+	email: string;
+	password: string;
 }
 
 const fieldsIsEmpty = ref(true);
@@ -17,7 +15,7 @@ const signInData = reactive<SignInFields>({
 	password: ""
 });
 
-function handleClick() {
+function handleSubmit() {
 	console.log(signInData.email);
 }
 
@@ -29,62 +27,31 @@ watch(signInData, (newState) => {
 </script>
 
 <template>
-	<form class="form">
-		<label class="form__title">Faça login</label>
-		<fieldset class="form__fields">
-			<TextInput
-				type="email"
-				id="email"
-				name="email"
-				required
-				labelText="Email"
-				v-model="signInData.email"
-				:errorMessage="'Hello'"
-			/>
 
-			<TextInput
-				type="password"
-				id="password"
-				name="password"
-				maxlength="8"
-				required
-				labelText="Senha"
-				v-model="signInData.password"
-				:errorMessage="null"
-			/>
+	<Form
+		title="Faça Login"
+		:handleSubmit="handleSubmit"
+		:buttonDisabled="fieldsIsEmpty"
+	>
+		<Field
+			type="email"
+			id="email"
+			name="email"
+			required
+			labelText="Email"
+			v-model="signInData.email"
+			:error="{ message: 'Ocorreu um erro!' }"
+		/>
 
-			<SubmitButton @click="handleClick" :disabled="fieldsIsEmpty">
-				Entrar
-			</SubmitButton>
-		</fieldset>
-	</form>
+		<Field
+			type="password"
+			id="password"
+			name="password"
+			maxlength="8"
+			required
+			labelText="Senha"
+			v-model="signInData.password"
+			:error="{ message: 'Ocorreu um erro!' }"
+		/>
+	</Form>
 </template>
-
-<style lang="scss" scoped>
-@import "../assets/scss/main";
-.form {
-	@include flex-center(column);
-
-	width: fit-content;
-
-	gap: 12px;
-	padding: 12px;
-	border-radius: 4px;
-
-	background-color: $util-primary-color;
-}
-
-.form__title {
-	font-weight: bold;
-	text-transform: capitalize;
-	font-size: 2rem;
-}
-
-.form__fields {
-	@include flex-center(column);
-
-	gap: 20px;
-
-	border: none;
-}
-</style>

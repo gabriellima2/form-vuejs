@@ -1,16 +1,17 @@
 <script lang="ts" setup>
 import { defineProps, InputHTMLAttributes, defineEmits } from "vue";
 
-import Error, { ErrorProps } from "../Error.vue";
+import Error, { ErrorProps } from "./Error.vue";
 
 export type ModelValue = string | number;
 
-interface Props extends ErrorProps, InputHTMLAttributes {
+export interface FieldProps extends Omit<InputHTMLAttributes, "value"> {
 	labelText: string;
 	modelValue: ModelValue;
+	error: ErrorProps;
 }
 
-const props = defineProps<Props>();
+const props = defineProps<FieldProps>();
 const emit = defineEmits<{
 	(e: "update:modelValue", value: ModelValue): void
 }>();
@@ -37,6 +38,8 @@ function handleBlur({ target }: Event) {
 
 	label.classList.remove(CLASSNAME_MOVE_LABEL);
 }
+
+console.log(props.error.message);
 </script>
 
 <template>
@@ -53,12 +56,12 @@ function handleBlur({ target }: Event) {
 			/>
 		</label>
 
-		<Error :errorMessage="props.errorMessage" class="container__error" />
+		<Error :message="props.error.message" class="container__error" />
 	</div>
 </template>
 
 <style lang="scss" scoped>
-@import "../../assets/scss/main";
+@import "../assets/scss/main";
 .container__label {
 	display: flex;
 	flex-direction: column;

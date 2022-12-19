@@ -2,11 +2,11 @@
 import { defineProps } from "vue";
 
 export interface ErrorProps {
-	errorMessage?: string | null;
+	message?: string | null;
 }
 
 const props = defineProps<ErrorProps>();
-const hasNoError = !props.errorMessage;
+const hasNoError = !props.message;
 </script>
 
 <template>
@@ -15,6 +15,6 @@ const hasNoError = !props.errorMessage;
 		:hidden="hasNoError"
 		:aria-hidden="hasNoError"
 	>
-		{{ props.errorMessage }}
+		{{ props.message }}
 	</p>
 </template>
