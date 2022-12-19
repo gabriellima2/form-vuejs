@@ -1,7 +1,13 @@
-$background-color: #0A0A0A;
-$font-color: #EAEAEA;
-$accent-color: #f1f1f1;
-$contrast-color: #0A0A0A;
-$util-primary-color: #202020;
+$background-color: #dddddd;
+$font-color: #0A0A0A;
+$accent-color: #1092e9;
+$contrast-color: #dddddd;
+$util-primary-color: #ebebeb;
+$error-color: #e94343;
 
-$font: 'Poppins', sans-serif;
+$font: 'Titillium Web', sans-serif;
+
+$sm-device: "464px";
+$base-device: "768px";
+$lg-device: "1024px";
+$xl-device: "1440px";

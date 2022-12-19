@@ -28,6 +28,10 @@ input[data-autocompleted] {
     background-color: transparent !important;
 }
 
+input, button {
+	font-family: $font;
+}
+
 li {
 	list-style: none;
 }
@@ -35,7 +39,6 @@ li {
 button {
 	border: none;
 	cursor: pointer;
-	font-family: $font;
 	transition: opacity 0.2s ease-in-out;
 
 	&:hover {

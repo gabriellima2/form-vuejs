@@ -38,8 +38,6 @@ function handleBlur({ target }: Event) {
 
 	label.classList.remove(CLASSNAME_MOVE_LABEL);
 }
-
-console.log(props.error.message);
 </script>
 
 <template>
@@ -56,19 +54,22 @@ console.log(props.error.message);
 			/>
 		</label>
 
-		<Error :message="props.error.message" class="container__error" />
+		<Error :message="props.error.message" />
 	</div>
 </template>
 
 <style lang="scss" scoped>
 @import "../assets/scss/main";
+.container {
+	width: 100%;
+}
 .container__label {
+	width: 100%;
+
 	display: flex;
 	flex-direction: column;
 
 	position: relative;
-
-	font-size: 0.8rem;
 }
 .label {
 	& > span {
@@ -76,12 +77,19 @@ console.log(props.error.message);
 
 		position: absolute;
 		top: 50%;
-		left: 10px;
+		left: 8px;
 		transform: translateY(-50%);
 
+		color: #00000085;
 		font-size: 0.8rem;
+		font-weight: 500;
 
 		background-color: $util-primary-color;
+
+		@media screen and (min-width: $base-device) {
+			font-size: 0.9rem;
+			left: 10px;
+		}
 	}
 }
 .label--move {
@@ -91,16 +99,29 @@ console.log(props.error.message);
 		transform: translateY(0%);
 
 		padding: 0px 4px;
-		font-size: 0.725rem;
+		font-size: 0.7rem;
+
+		@media screen and (min-width: $base-device) {
+			font-size: 0.725rem;
+		}
 	}
 }
 .container__input {
-	font-size: 1rem;
+	width: 100%;
+
+	font-size: 0.9rem;
 	color: $font-color;
 
-	padding: 10px 8px;
-	border-radius: 6px;
-	border: 1px solid $accent-color;
+	padding: 8px 6px;
+	border-radius: 4px;
+	border: 2px solid #00000015;
 	background: none;
+
+	@media screen and (min-width: $base-device) {
+		font-size: 1rem;
+
+		border-radius: 6px;
+		padding: 10px 8px;
+	}
 }
 </style>

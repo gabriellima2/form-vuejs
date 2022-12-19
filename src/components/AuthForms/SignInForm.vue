@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { reactive, ref, watch } from "vue";
 
-import Form from "./BaseForm/Form.vue";
-import Field from "./Field.vue";
+import Form from "../BaseForm/Form.vue";
+import Field from "../Field.vue";
 
 interface SignInFields {
 	email: string;
@@ -27,11 +27,11 @@ watch(signInData, (newState) => {
 </script>
 
 <template>
-
 	<Form
+		class="form"
 		title="Faça Login"
 		:handleSubmit="handleSubmit"
-		:buttonDisabled="fieldsIsEmpty"
+		:buttonDisabled="false"
 	>
 		<Field
 			type="email"

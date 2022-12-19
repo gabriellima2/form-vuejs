@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import SignInForm from "../components/SignInForm.vue";
+import SignInForm from "../components/AuthForms/SignInForm.vue";
 </script>
 
 <template>
@@ -15,5 +15,7 @@ import SignInForm from "../components/SignInForm.vue";
 
 	width: 100vw;
 	height: 100vh;
+
+	padding: 12px;
 }
 </style>

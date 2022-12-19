@@ -10,11 +10,24 @@ const hasNoError = !props.message;
 </script>
 
 <template>
-	<p
+	<span
 		role="alert"
 		:hidden="hasNoError"
 		:aria-hidden="hasNoError"
 	>
 		{{ props.message }}
-	</p>
+	</span>
 </template>
+
+<style lang="scss" scoped>
+@import "../assets/scss/main";
+span {
+	color: $error-color;
+	font-weight: 500;
+	font-size: 0.8rem;
+
+	@media screen and (min-width: $base-device) {
+		font-size: 0.9rem;
+	}
+}
+</style>
