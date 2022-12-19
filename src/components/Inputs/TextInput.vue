@@ -1,8 +1,7 @@
 <script lang="ts" setup>
-import { defineProps, InputHTMLAttributes } from "vue";
+import { defineProps, InputHTMLAttributes, defineEmits } from "vue";
 
-import Error from "../Error.vue";
-import type { ErrorProps } from "../Error.vue";
+import Error, { ErrorProps } from "../Error.vue";
 
 export type ModelValue = string | number;
 
@@ -60,9 +59,6 @@ function handleBlur({ target }: Event) {
 
 <style lang="scss" scoped>
 @import "../../assets/scss/main";
-
-.container {}
-
 .container__label {
 	display: flex;
 	flex-direction: column;
@@ -71,7 +67,6 @@ function handleBlur({ target }: Event) {
 
 	font-size: 0.8rem;
 }
-
 .label {
 	& > span {
 		transition: all 0.1s ease-in-out;
@@ -86,7 +81,6 @@ function handleBlur({ target }: Event) {
 		background-color: $util-primary-color;
 	}
 }
-
 .label--move {
 	& > span {
 		top: -20%;
@@ -97,7 +91,6 @@ function handleBlur({ target }: Event) {
 		font-size: 0.725rem;
 	}
 }
-
 .container__input {
 	font-size: 1rem;
 	color: $font-color;
@@ -107,6 +100,4 @@ function handleBlur({ target }: Event) {
 	border: 1px solid $accent-color;
 	background: none;
 }
-
-.container__error {}
 </style>

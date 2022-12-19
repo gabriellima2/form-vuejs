@@ -39,7 +39,7 @@ watch(signInData, (newState) => {
 				required
 				labelText="Email"
 				v-model="signInData.email"
-				:errorMessage="null"
+				:errorMessage="'Hello'"
 			/>
 
 			<TextInput
