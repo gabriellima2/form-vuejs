@@ -50,4 +50,13 @@ button {
 		opacity: 0.4;
 	}
 }
+
+.fullscreen {
+	@include flex-center(column);
+
+	width: 100vw;
+	height: 100vh;
+
+	padding: 12px;
+}
 </style>

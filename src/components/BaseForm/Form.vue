@@ -14,7 +14,7 @@ const props = defineProps<BaseFormProps>();
 
 <template>
 	<form class="form" v-bind="$attrs">
-		<label class="form__title">Faça login</label>
+		<label class="form__title">{{ props.title }}</label>
 		<div class="content">
 			<fieldset class="content__fields">
 				<slot></slot>

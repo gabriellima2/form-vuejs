@@ -1,3 +1,9 @@
+<script lang="ts" setup>
+import SignUpForm from "../components/AuthForms/SignUpForm.vue";
+</script>
+
 <template>
-	<h1>Criar Conta</h1>
+	<main class="fullscreen">
+		<SignUpForm />
+	</main>
 </template>

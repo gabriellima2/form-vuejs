@@ -3,19 +3,7 @@ import SignInForm from "../components/AuthForms/SignInForm.vue";
 </script>
 
 <template>
-	<main class="container">
+	<main class="fullscreen">
 		<SignInForm />
 	</main>
 </template>
-
-<style lang="scss" scoped>
-@import "../assets/scss/main";
-.container {
-	@include flex-center(column);
-
-	width: 100vw;
-	height: 100vh;
-
-	padding: 12px;
-}
-</style>
