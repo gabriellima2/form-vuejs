@@ -5,13 +5,13 @@ import Error, { ErrorProps } from "./Error.vue";
 
 export type ModelValue = string | number;
 
-export interface FieldProps extends Omit<InputHTMLAttributes, "value"> {
+export interface BaseFieldProps extends Omit<InputHTMLAttributes, "value"> {
 	labelText: string;
 	modelValue: ModelValue;
 	error: ErrorProps;
 }
 
-const props = defineProps<FieldProps>();
+const props = defineProps<BaseFieldProps>();
 const emit = defineEmits<{
 	(e: "update:modelValue", value: ModelValue): void
 }>();

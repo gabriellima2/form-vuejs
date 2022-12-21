@@ -2,7 +2,8 @@
 import { reactive, ref, watch } from "vue";
 
 import Form from "../BaseForm/Form.vue";
-import Field from "../Field.vue";
+import EmailField from "./components/EmailField.vue";
+import PasswordField from "./components/PasswordField.vue";
 
 interface SignInFields {
 	email: string;
@@ -33,25 +34,13 @@ watch(signInData, (newState) => {
 		:handleSubmit="handleSubmit"
 		:buttonDisabled="false"
 	>
-		<Field
-			type="email"
-			id="email"
-			name="email"
-			required
-			labelText="Email"
+		<EmailField
 			v-model="signInData.email"
-			:error="{ message: 'Ocorreu um erro!' }"
+			:error="{ message: '' }"
 		/>
-
-		<Field
-			type="password"
-			id="password"
-			name="password"
-			maxlength="8"
-			required
-			labelText="Senha"
+		<PasswordField
 			v-model="signInData.password"
-			:error="{ message: 'Ocorreu um erro!' }"
+			:error="{ message: '' }"
 		/>
 	</Form>
 </template>

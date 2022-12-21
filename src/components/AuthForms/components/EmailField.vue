@@ -1,14 +1,14 @@
 <script lang="ts" setup>
-import Field, { FieldProps } from "../../Field.vue";
+import BaseField, { BaseFieldProps } from "../../BaseField.vue";
 
 interface EmailFieldProps extends
-	Omit<FieldProps, "type" | "id" | "name" | "required" | "labelText"> {}
+	Omit<BaseFieldProps, "type" | "id" | "name" | "required" | "labelText"> {}
 
 const props = defineProps<EmailFieldProps>();
 </script>
 
 <template>
-	<Field
+	<BaseField
 		v-bind="props"
 		type="email"
 		id="email"
