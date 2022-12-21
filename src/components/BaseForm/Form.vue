@@ -2,11 +2,13 @@
 import { defineProps, FormHTMLAttributes } from "vue";
 
 import SubmitButton from "./components/SubmitButton.vue";
+import Link, { LinkProps } from "./components/Link.vue";
 
 interface BaseFormProps extends FormHTMLAttributes {
 	title: string;
 	handleSubmit: () => void;
 	buttonDisabled?: boolean
+	link: Pick<LinkProps, "to"> & { text: string }
 }
 
 const props = defineProps<BaseFormProps>();
@@ -22,6 +24,7 @@ const props = defineProps<BaseFormProps>();
 			<SubmitButton @click="props.handleSubmit" :disabled="props.buttonDisabled">
 					Entrar
 			</SubmitButton>
+			<Link :to="props.link.to">{{ props.link.text }}</Link>
 		</div>
 	</form>
 </template>

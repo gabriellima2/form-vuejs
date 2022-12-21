@@ -33,6 +33,7 @@ watch(signInData, (newState) => {
 		title="Faça Login"
 		:handleSubmit="handleSubmit"
 		:buttonDisabled="false"
+		:link="{ to: 'criar-conta', text: 'Criar uma conta' }"
 	>
 		<EmailField
 			v-model="signInData.email"

@@ -28,6 +28,7 @@ function handleSubmit() {
 		title="Criar Conta"
 		:handleSubmit="handleSubmit"
 		:buttonDisabled="false"
+		:link="{ to: '/', text: 'Já tenho uma conta' }"
 		>
 		<NameField
 			v-model="signUpData.name"
