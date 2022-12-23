@@ -5,6 +5,7 @@ interface EmailFieldProps extends
 	Omit<BaseFieldProps, "type" | "id" | "name" | "required" | "labelText"> {}
 
 const props = defineProps<EmailFieldProps>();
+console.log(props.error);
 </script>
 
 <template>

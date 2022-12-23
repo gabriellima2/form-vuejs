@@ -6,14 +6,12 @@ export interface ErrorProps {
 }
 
 const props = defineProps<ErrorProps>();
-const hasNoError = !props.message;
 </script>
 
 <template>
 	<span
+		v-if="props.message"
 		role="alert"
-		:hidden="hasNoError"
-		:aria-hidden="hasNoError"
 	>
 		{{ props.message }}
 	</span>
