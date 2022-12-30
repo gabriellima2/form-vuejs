@@ -1,4 +1,4 @@
-# Formulário VueJS (Desenvolvimento)
+# Formulário VueJS
 
 Para conhecer/praticar mais de VueJS e Composition API, decidi criar este projeto de formulários.
 
@@ -12,6 +12,7 @@ Para conhecer/praticar mais de VueJS e Composition API, decidi criar este projet
 - [Vue 3](https://vuejs.org/)
 - [Typescript](https://www.typescriptlang.org/)
 - [Sass](https://sass-lang.com/)
+- [Vuelidate](https://vuelidate.js.org/)
 
 # Rodando o projeto
 
